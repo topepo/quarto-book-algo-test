@@ -1,0 +1,67 @@
+project:
+  type: book
+
+## Global options that can be re-defined in each qmd file
+format:
+  html:
+    toc: true
+    theme: [simplex, apm2e.scss]
+    mainfont: 'Libre Franklin'
+    fig-width: 6
+    fig-height: 4.25
+    fig-align: center
+    tbl-cap-location: bottom
+    # Until we are ready to release, I'll use a dummy url that we don't
+    # want search engines to find.
+    # Also, add some js code to enable algorithms
+    include-in-header:
+      text: |
+        <meta name="robots" content="noindex">
+        <script>
+        MathJax = {
+          loader: {
+            load: ['[tex]/boldsymbol']
+          },
+          tex: {
+            tags: "all",
+            inlineMath: [['$','$'], ['\\(','\\)']],
+            displayMath: [['$$','$$'], ['\\[','\\]']],
+            processEscapes: true,
+            processEnvironments: true,
+            packages: {
+              '[+]': ['boldsymbol']
+            }
+          }
+        };
+        </script>
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+execute:
+  freeze: auto
+  keep-md: true
+  # turn these on during development
+  # message: false
+  # warning: false
+  echo: false
+
+knitr:
+  opts_chunk:
+    out.width: 90%
+    fig.path: "figures/"
+# Cache path is set in each file's YAML
+
+## Define book style and declare qmd files to process
+book:
+  date: last-modified
+  date-format: YYYY-MM-DD
+  sidebar:
+      style: "docked"
+      title: "Chapters"
+  reader-mode: true
+  chapters:
+  - index.qmd
+  - chapters/algo.qmd
+
+filters:
+  - pseudocode
+

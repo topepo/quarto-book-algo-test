@@ -1,0 +1,37 @@
+[
+  {
+    "objectID": "algo.html#setup",
+    "href": "algo.html#setup",
+    "title": "1  An algorithm",
+    "section": "1.1 Setup",
+    "text": "1.1 Setup\nI used quarto add leovan/quarto-pseudocode to add the extension.\nThey suggest an inclusion via include-in-header in _quarto.yml:\n&lt;script&gt;\nMathJax = {\n  loader: {\n    load: ['[tex]/boldsymbol']\n  },\n  tex: {\n    tags: \"all\",\n    inlineMath: [['$','$'], ['\\\\(','\\\\)']],\n    displayMath: [['$$','$$'], ['\\\\[','\\\\]']],\n    processEscapes: true,\n    processEnvironments: true,\n    packages: {\n      '[+]': ['boldsymbol']\n    }\n  }\n};\n&lt;/script&gt;\n&lt;script src=\"https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js\" type=\"text/javascript\"&gt;&lt;/script&gt;\nThey also suggest adding\nfilters:\n  - pseudocode"
+  },
+  {
+    "objectID": "algo.html#an-example-algorithm",
+    "href": "algo.html#an-example-algorithm",
+    "title": "1  An algorithm",
+    "section": "1.2 An example algorithm",
+    "text": "1.2 An example algorithm\n\n\n\\begin{algorithm} \\caption{Resampling for performance estimation.} \\begin{algorithmic} \\State $D$: training set of predictors $X$ and outcome $y$ \\State $B$: number of resamples \\State $f()$: modeling function including preprocessing \\Procedure{Resample}{$D, B, f()$} \\For{$b =1$ \\To $B$} \\State Partition $D^{train}$ into $D_b^{model}$ and $D_b^{pred}$. \\State Train model $f$ on the analysis set to produce $\\widehat{f}_{b}(D_b^{model})$. \\State Generate assessment set predictions $\\widehat{y}_b$ by applying model $\\widehat{f}_{b}$ to $D_b^{pred}$. \\State Estimate performance statistic $\\widehat{Q}_{b}$. \\EndFor \\State Compute reampling estimate $\\widehat{Q} = \\sum_{b=1}^B \\widehat{Q}_{b}$. \\Return $\\widehat{Q}$. \\Endprocedure \\end{algorithmic} \\end{algorithm}\n\n\nHere’s another code chunk!\nA code chunk just for fun!\n\n\n[1] 0.6321206"
+  },
+  {
+    "objectID": "chapters/algo.html#setup",
+    "href": "chapters/algo.html#setup",
+    "title": "1  An algorithm",
+    "section": "1.1 Setup",
+    "text": "1.1 Setup\nI used quarto add leovan/quarto-pseudocode to add the extension.\nThey suggest an inclusion via include-in-header in _quarto.yml:\n&lt;script&gt;\nMathJax = {\n  loader: {\n    load: ['[tex]/boldsymbol']\n  },\n  tex: {\n    tags: \"all\",\n    inlineMath: [['$','$'], ['\\\\(','\\\\)']],\n    displayMath: [['$$','$$'], ['\\\\[','\\\\]']],\n    processEscapes: true,\n    processEnvironments: true,\n    packages: {\n      '[+]': ['boldsymbol']\n    }\n  }\n};\n&lt;/script&gt;\n&lt;script src=\"https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js\" type=\"text/javascript\"&gt;&lt;/script&gt;\nThey also suggest adding\nfilters:\n  - pseudocode"
+  },
+  {
+    "objectID": "chapters/algo.html#an-example-algorithm",
+    "href": "chapters/algo.html#an-example-algorithm",
+    "title": "1  An algorithm",
+    "section": "1.2 An example algorithm",
+    "text": "1.2 An example algorithm\n\n\n\\begin{algorithm} \\caption{Resampling for performance estimation.} \\begin{algorithmic} \\State $D$: training set of predictors $X$ and outcome $y$ \\State $B$: number of resamples \\State $f()$: modeling function including preprocessing \\Procedure{Resample}{$D, B, f()$} \\For{$b =1$ \\To $B$} \\State Partition $D^{train}$ into $D_b^{model}$ and $D_b^{pred}$. \\State Train model $f$ on the analysis set to produce $\\widehat{f}_{b}(D_b^{model})$. \\State Generate assessment set predictions $\\widehat{y}_b$ by applying model $\\widehat{f}_{b}$ to $D_b^{pred}$. \\State Estimate performance statistic $\\widehat{Q}_{b}$. \\EndFor \\State Compute reampling estimate $\\widehat{Q} = \\sum_{b=1}^B \\widehat{Q}_{b}$. \\Return $\\widehat{Q}$. \\Endprocedure \\end{algorithmic} \\end{algorithm}\n\n\nWe’d reference this using Algorithm 1.\nHere’s another code chunk!\nA code chunk just for fun!\n\n\n[1] 0.6321206"
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Preface",
+    "section": "",
+    "text": "Preface\nThis is a Quarto book.\nTo learn more about Quarto books visit https://quarto.org/docs/books.\n\n\n[1] 2"
+  }
+]

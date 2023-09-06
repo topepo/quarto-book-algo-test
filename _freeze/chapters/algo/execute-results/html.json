@@ -1,0 +1,14 @@
+{
+  "hash": "655f7b687f7e8da6e3a6e8d29883832d",
+  "result": {
+    "markdown": "# An algorithm\n\nA code chunk just for fun!\n\n\n::: {.cell}\n::: {.cell-output .cell-output-stdout}\n\n```\n\nCall:\nlm(formula = mpg ~ disp, data = mtcars)\n\nCoefficients:\n(Intercept)         disp  \n   29.59985     -0.04122  \n```\n\n\n:::\n:::\n\n\n## Setup\n\nI used `quarto add leovan/quarto-pseudocode` to add the extension.\n\nThey suggest an inclusion via `include-in-header` in `_quarto.yml`:\n\n```         \n<script>\nMathJax = {\n  loader: {\n    load: ['[tex]/boldsymbol']\n  },\n  tex: {\n    tags: \"all\",\n    inlineMath: [['$','$'], ['\\\\(','\\\\)']],\n    displayMath: [['$$','$$'], ['\\\\[','\\\\]']],\n    processEscapes: true,\n    processEnvironments: true,\n    packages: {\n      '[+]': ['boldsymbol']\n    }\n  }\n};\n</script>\n<script src=\"https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js\" type=\"text/javascript\"></script>\n```\n\nThey also suggest adding\n\n```         \nfilters:\n  - pseudocode\n```\n\n## An example algorithm\n\n``` pseudocode\n#| label: alg-resampling\n#| html-indent-size: \"1.2em\"\n#| html-comment-delimiter: \"//\"\n#| html-line-number: true\n#| html-line-number-punc: \":\"\n#| html-no-end: false\n\\begin{algorithm}\n\\caption{Resampling for performance estimation.}\n\\begin{algorithmic}\n\\State $D$: training set of predictors $X$ and outcome $y$\n\\State $B$: number of resamples\n\\State $f()$: modeling function including preprocessing\n\\Procedure{Resample}{$D, B, f()$}\n  \\For{$b =1$ \\To $B$}\n    \\State Partition $D^{train}$ into $D_b^{model}$ and $D_b^{pred}$.\n    \\State Train model $f$ on the analysis set to produce $\\widehat{f}_{b}(D_b^{model})$.\n    \\State Generate assessment set predictions $\\widehat{y}_b$ by applying model $\\widehat{f}_{b}$ to $D_b^{pred}$.\n    \\State Estimate performance statistic $\\widehat{Q}_{b}$.\n  \\EndFor \n  \\State Compute reampling estimate $\\widehat{Q} = \\sum_{b=1}^B \\widehat{Q}_{b}$.\n  \\Return $\\widehat{Q}$.\n\\Endprocedure\n\\end{algorithmic}\n\\end{algorithm}\n```\n\nWe'd reference this using @alg-resampling. \n\nHere's another code chunk!\n\nA code chunk just for fun!\n\n\n::: {.cell}\n::: {.cell-output .cell-output-stdout}\n\n```\n[1] 0.6321206\n```\n\n\n:::\n:::\n",
+    "supporting": [],
+    "filters": [
+      "rmarkdown/pagebreak.lua"
+    ],
+    "includes": {},
+    "engineDependencies": {},
+    "preserve": {},
+    "postProcess": true
+  }
+}
